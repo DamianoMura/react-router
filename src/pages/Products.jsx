@@ -1,19 +1,31 @@
 import React from 'react'
-
-
-
+import axios from 'axios'
+import { useState,useEffect } from 'react'
+const endpoint="https://fakestoreapi.com/products";
+const Products = () => {
+   const [shopItems,setShopItems]=useState([]);
+  useEffect(()=>{
+    axios.get(endpoint).then((resp)=>{
+          const newList= resp.data.map((item)=>{
+            
+            return item 
+          })
+      
+        // setShopItems(newList);
+    })
+  })
   
   return (
-    <div className="container">
+    <div className="container ">
       <div className="row">
-        {/* {props.products.map((product,index)=>{
-          <div className="col-4" key={index}>
+        {/* {shop.map((item)=>{
+          <div className="col-4" key={item.id}>
             <div className="card">
-              <div className="card-header">{product.title}</div>
+              <div className="card-header">{item.title}</div>
               <div className="card-body">
-                <img src={product.image} alt="" />
+                <img src={item.image} alt="" />
               </div>
-              <div className="card-footer">{product.rating}</div>
+              <div className="card-footer">{item.rating}</div>
             </div>
         </div>
         })} */}

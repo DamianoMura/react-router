@@ -39,7 +39,7 @@ const LandingPage = () => {
              
             <div className="overhead-title">
               <h4>UNBEATABLE PRICES!!!</h4>
-              <NavLink className="btn btn-primary" to="/products">SHOP NOW!!! </NavLink>
+              <NavLink className="btn btn-success" to="/products">SHOP NOW!!! </NavLink>
             </div>  
             </div>
           </div>

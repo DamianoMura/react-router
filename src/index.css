@@ -5,7 +5,10 @@
 }
 
 header{
-  background-color: azure;
+  box-shadow: 10px 0 10px grey;
+}
+main{
+  border: rgb(98, 111, 80);
 }
 
 .logo{
@@ -67,6 +70,10 @@ header{
 }
 
 .link:hover{
+  color:red;
+  background-color: rgba(47, 79, 79, 0.337);
+}
+.link .active{
   color:red;
   background-color: rgba(47, 79, 79, 0.337);
 }
