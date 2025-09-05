@@ -3,3 +3,70 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header{
+  background-color: azure;
+}
+
+.logo{
+  margin:10px;
+  background-color: aliceblue;
+  box-shadow: rgb(138, 144, 255) -10px -10px 10px inset;
+  padding: 3px 10px;
+  text-align: center;
+  justify-content: center; 
+  display:flex;
+  align-items: center;
+  border-radius: 100%;
+  width : 60px;
+  height :60px;
+}
+
+
+.vertical-middle{
+  vertical-align: middle;
+}
+
+.nav-links{
+  transform: translate( 12px, 8px);
+}
+.nav-links a{
+  text-decoration: none;
+  color:black;
+}
+
+.cta{
+  width:100vw;
+  display: flex;
+  position:relative;
+}
+
+.cta-pic{
+  width:60px;
+}
+
+.cta-pic img{
+  max-height:250px;
+}
+
+.overhead-title{
+  position: absolute;
+  top:30%;
+  right:50%
+}
+
+.overhead-title{
+  color:yellow;
+  background-color: rgba(255, 32, 32, 0.608);
+  padding:20px;
+}
+
+.link{
+  font-size:20px;
+  padding: 4px 10px;
+}
+
+.link:hover{
+  color:red;
+  background-color: rgba(47, 79, 79, 0.337);
+}
