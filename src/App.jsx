@@ -1,4 +1,9 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DefaultLayout from './layouts/DefaultLayout';
+import LandingPage from './pages/LandingPage';
+import About from './pages/About';
+import Products from './pages/Products';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Required Bootstrap imports
@@ -6,9 +11,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   return (
-    <>
-      <h1> default page </h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayout/>}>
+          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/products" element={<Products/>}/>
+        </Route>  
+    </Routes>
+
+ </BrowserRouter>
   )
 }
 
