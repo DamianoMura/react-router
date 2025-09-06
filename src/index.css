@@ -39,7 +39,6 @@ main{
 }
 
 .cta{
-  width:100vw;
   display: flex;
   position:relative;
 }

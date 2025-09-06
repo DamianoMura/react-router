@@ -8,7 +8,7 @@ const LandingPage = () => {
   const [data,setData]=useState([]);
 
   useEffect(()=>{
-    //receive the list to create my call to action composed by 4 pictures to compose a sort of collage with high count and high rating
+    
     axios.get(endpoint).then((resp)=>{
       
       const filteredData= resp.data.filter((item)=>{
