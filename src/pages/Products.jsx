@@ -18,8 +18,9 @@ const Products = () => {
       })
   },[])
   return (
-    <div className="products-list">
+    <main>
       <div className="container">
+       
         <div className="row g-5">
           <div className="col-12">
             <h3>All Items</h3>
@@ -33,7 +34,8 @@ const Products = () => {
           }
         </div>
       </div>
-    </div>
+   
+    </main>
   )
 }
 

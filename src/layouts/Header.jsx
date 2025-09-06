@@ -26,21 +26,31 @@ const Header = () => {
   
   return (
     <header>
-      <nav className= "d-flex m-3 align-items-center justify-content-between">
-        <div className="logo">logo</div>
-        <h1>MyFakeStore.com</h1>
-        <div className="nav-links">
-          <ul className='list-unstyled d-flex '>
-            {linkTree.map((link)=>{
-              return(
-                <li className={location.pathname === link.href ? "link active" : "link"} key={link.id}>
-                  <NavLink  to={link.href}>{link.name} </NavLink>
-                </li>
-              )
-            })}
-          </ul>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <NavLink to="/" className="logo">logo </NavLink>
+             
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              {linkTree.map((link)=>{
+                    return(
+                      <li>
+                        <NavLink className={location.pathname === link.href ? "nav-link active" : "nav-link"} key={link.id} to={link.href}>{link.name} </NavLink>
+                      </li>
+                    )
+                  })}
+            </ul>
+          </div>
         </div>
       </nav>
+      
+        
+        <h1 className="text-center">MyFakeStore.com</h1>
+        
+      
     </header>
   )
 }

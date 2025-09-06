@@ -12,7 +12,7 @@ const LandingPage = () => {
     axios.get(endpoint).then((resp)=>{
       
       const filteredData= resp.data.filter((item)=>{
-        return item.rating.rate>3 && item.rating.count>100;
+        return item.rating.rate>3 && item.rating.count>350;
       })
       setData(filteredData);
     })
@@ -21,9 +21,11 @@ const LandingPage = () => {
     <main>
       <div className="container">
         <div className="row">
-          
           <div className="col-12 text-center">
             <h2>Welcome to our online shop, </h2>
+          </div>
+          <div className="col-12 text-center d-flex justify-content-center">
+            
             <div className="cta">
               
               {data.map((item)=>{
