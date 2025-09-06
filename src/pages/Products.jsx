@@ -21,7 +21,7 @@ const Products = () => {
     <main>
       <div className="container">
        
-        <div className="row g-5">
+        <div className="row g-2">
           <div className="col-12">
             <h3>All Items</h3>
           </div>

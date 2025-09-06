@@ -37,8 +37,8 @@ const Header = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {linkTree.map((link)=>{
                     return(
-                      <li>
-                        <NavLink className="nav-link" key={link.id} to={link.href}>{link.name} </NavLink>
+                      <li key={link.id}>
+                        <NavLink className="nav-link"  to={link.href}>{link.name} </NavLink>
                       </li>
                     )
                   })}
