@@ -9,7 +9,7 @@ const ProductFrame = (props) => {
         <div className="item-pic">
           <div className="price"><strong>{item.price}€</strong> </div>
           <div className="hovered">
-          <img  src={item.image} alt={item.title} />
+            <img  src={item.image} alt={item.title} />
 
           </div>
 

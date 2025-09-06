@@ -32,33 +32,43 @@ const LandingPage = () => {
               <h4>BEST RATES AT UNBEATABLE PRICES!!!</h4>
               <NavLink className="btn btn-success" to="/products">SHOP NOW!!! </NavLink>
             </div>  
-              {data.map((item)=>{
-                return(
-                  <div className="cta-pic" key={item.id}>
-                    <img src={item.image} alt={`item${item.id}`} />
-                    <div className="special">
-                      <strong className="price">{item.price} €</strong>
-                      <strong className="rating">{item.rating.rate} <i class="fa-solid fa-star"></i></strong>
+            <div className="container-fluid">
+              <div className="row">
+
+                  {data.map((item)=>{
+                    return(
+
                       
-                    </div>
-                    <div className="title">
-                      {item.title}
-                    </div>
+                      <div className="col-12 col-md-6 col-lg-3"  >
 
-                    {/* for now i know the 4 categories and i hardcode them here !!!not usable in real apps as categories may increment or decrement!!! */}
-                    <div className={
-                      item.category==="men's clothing" ? "cat cat-men" :
-                      item.category==="jewelery" ? "cat cat-jewels" :
-                      item.category==="electronics" ? "cat cat-electronic" :
-                      "cat cat-women"
-                    }> 
-                    <span>{item.category}</span>
+                      <div className="cta-pic p-5 m-1">
+                        <img src={item.image} alt={`item${item.id}`} />
+                        <div className="special">
+                          <strong className="price mb-1">{item.price} €</strong>
+                          <strong className="rating">{item.rating.rate} <i class="fa-solid fa-star"></i></strong>
+                          
+                        </div>
+                        <div className="title">
+                          {item.title}
+                        </div>
 
-                     </div>
-                    
-                  </div>
-                )
-              })} 
+                        {/* for now i know the 4 categories and i hardcode them here !!!not usable in real apps as categories may increment or decrement!!! */}
+                        <div className={
+                          item.category==="men's clothing" ? "cat cat-men" :
+                          item.category==="jewelery" ? "cat cat-jewels" :
+                          item.category==="electronics" ? "cat cat-electronic" :
+                          "cat cat-women"
+                        }> 
+                        <span>{item.category}</span>
+
+                        </div>
+                        
+                      </div>
+                      </div>
+                    )
+                  })} 
+              </div>
+            </div>
               
               
             </div>
