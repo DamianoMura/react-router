@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 
@@ -21,6 +22,7 @@ const linkTree= [
 ]
 
 const Header = () => {
+
   
   return (
     <header>
@@ -31,8 +33,8 @@ const Header = () => {
           <ul className='list-unstyled d-flex '>
             {linkTree.map((link)=>{
               return(
-                <li className='me-3' key={link.id}>
-                  <NavLink className={location.pathname === link.href ? "link active" : "link"} to={link.href}>{link.name} </NavLink>
+                <li className={location.pathname === link.href ? "link active" : "link"} key={link.id}>
+                  <NavLink  to={link.href}>{link.name} </NavLink>
                 </li>
               )
             })}
