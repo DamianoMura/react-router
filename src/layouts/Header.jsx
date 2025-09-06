@@ -38,7 +38,7 @@ const Header = () => {
               {linkTree.map((link)=>{
                     return(
                       <li>
-                        <NavLink className={location.pathname === link.href ? "nav-link active" : "nav-link"} key={link.id} to={link.href}>{link.name} </NavLink>
+                        <NavLink className="nav-link" key={link.id} to={link.href}>{link.name} </NavLink>
                       </li>
                     )
                   })}
@@ -46,13 +46,11 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      
-        
-        <h1 className="text-center">MyFakeStore.com</h1>
-        
-      
+      <h1 className="text-center">MyFakeStore.com</h1>
     </header>
   )
 }
 
 export default Header
+        
+      

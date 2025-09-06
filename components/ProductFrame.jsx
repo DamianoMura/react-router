@@ -11,7 +11,8 @@ const ProductFrame = (props) => {
           <div className="rating"><strong>rate:{item.rating.rate}</strong> </div>
         </div>
         <div className="item-info">
-          <div className="title">{item.title}</div>
+          <div className="category"><strong>Category: </strong>{item.category}</div>
+          <div className="title"><h5>{item.title}</h5></div>
 
         </div>
       </div>
