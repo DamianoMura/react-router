@@ -34,12 +34,10 @@ main{
   display: flex;
   position:relative;
   flex-wrap: wrap;
-  width:100%; 
-  padding:20px;
+  width:100%; min-height: 400px;
 }
 
 .cta-pic{
-  padding : 0px 0px;
   width:100%;
   border: grey solid 1px;
   display: flex;
@@ -52,6 +50,7 @@ main{
   width:100%;
   max-height: 200px;
   object-fit: contain;
+  background-color:white;
 }
 
 .overhead-message{
@@ -112,18 +111,18 @@ main{
   color: white;
 }
 
-.cat-women {
+.cat-wom {
   background-color: rgb(251, 14, 172);
   color: white;
 }
 
-.cat-jewels {
+.cat-jew {
   background-color: rgb(206, 216, 19);
   color: rgb(31, 28, 28);
   font-weight: bold;
 }
 
-.cat-electronic {
+.cat-ele {
   background-color: rgb(42, 216, 19);
   color: rgb(89, 87, 87);
   font-weight: bold;
@@ -154,9 +153,10 @@ main{
   
 }
 .item-pic:hover .hovered{
-  position:absolute;
-  left:10vw;
-  top: -10vh;
+  position:fixed;
+  left:25%;
+  width:60%;
+  top: 100px;
   display:block;
   background-image: radial-gradient(rgb(149, 148, 148), white, rgba(255, 255, 255, 0));
 }

@@ -39,31 +39,28 @@ const LandingPage = () => {
                     return(
 
                       
-                      <div className="col-12 col-md-6 col-lg-3"  >
+                      <div className="col-12 col-md-6 col-lg-3 p-2"  >
+                        <div className="cta p-2">
 
-                      <div className="cta-pic p-5 m-1">
-                        <img src={item.image} alt={`item${item.id}`} />
-                        <div className="special">
-                          <strong className="price mb-1">{item.price} €</strong>
-                          <strong className="rating">{item.rating.rate} <i class="fa-solid fa-star"></i></strong>
-                          
-                        </div>
-                        <div className="title">
-                          {item.title}
-                        </div>
+                          <div className="cta-pic p-5 m-1">
+                            <img src={item.image} alt={`item${item.id}`} />
+                            <div className="special">
+                              <strong className="price mb-1">{item.price} €</strong>
+                              <strong className="rating">{item.rating.rate} <i class="fa-solid fa-star"></i></strong>
+                              
+                            </div>
+                            <div className="title">
+                              {item.title}
+                            </div>
 
-                        {/* for now i know the 4 categories and i hardcode them here !!!not usable in real apps as categories may increment or decrement!!! */}
-                        <div className={
-                          item.category==="men's clothing" ? "cat cat-men" :
-                          item.category==="jewelery" ? "cat cat-jewels" :
-                          item.category==="electronics" ? "cat cat-electronic" :
-                          "cat cat-women"
-                        }> 
-                        <span>{item.category}</span>
+                            {/* for now i know the 4 categories and i hardcode them here !!!not usable in real apps as categories may increment or decrement!!! */}
+                            <div className={`cat cat-${item.category.substr(0,3)}`}> 
+                            <span>{item.category}</span>
 
+                            </div>
+                            
+                          </div>
                         </div>
-                        
-                      </div>
                       </div>
                     )
                   })} 
