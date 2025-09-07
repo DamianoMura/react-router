@@ -1,24 +1,10 @@
-import { useState,useEffect } from "react"
-import axios from "axios"
+
 import { Link, NavLink } from 'react-router-dom'
-const endpoint="https://fakestoreapi.com/products";
 
 
-const LandingPage = () => {
-  const [data,setData]=useState([]);
 
-  useEffect(()=>{
-    
-    axios.get(endpoint).then((resp)=>{
-      
-      const filteredData= resp.data.filter((item)=>{
-        return item.rating.rate>3 && item.rating.count>350;
-      })
-      setData(filteredData);
-      
-
-    })
-  },[])
+const LandingPage = (props) => {
+const data = props.data;
   return (
     <main>
       <div className="container-fliud">
