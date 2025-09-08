@@ -11,6 +11,7 @@ const endpoint="https://fakestoreapi.com/products";
 function App() {
   
   const [items,setItems]=useState([]);
+  
 
      useEffect(()=>{
     
@@ -20,7 +21,7 @@ function App() {
           return item
         })
         setItems(array);
-        
+       
       })
   },[])
  return (

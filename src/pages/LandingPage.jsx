@@ -5,6 +5,9 @@ import { Link, NavLink } from 'react-router-dom'
 
 const LandingPage = (props) => {
 const data = props.data;
+ const items=data.filter((item)=>{
+          return item.rating.rate>3 && item.rating.count>350
+        })
   return (
     <main>
       <div className="container-fliud">
@@ -21,7 +24,7 @@ const data = props.data;
             <div className="container-fluid">
               <div className="row">
 
-                  {data.map((item)=>{
+                  {items.map((item)=>{
                     return(
 
                       
@@ -39,7 +42,7 @@ const data = props.data;
                               {item.title}
                             </div>
 
-                            {/* for now i know the 4 categories and i hardcode them here !!!not usable in real apps as categories may increment or decrement!!! */}
+                           
                             <div className={`cat cat-${item.category.substr(0,3)}`}> 
                             <span>{item.category}</span>
 
