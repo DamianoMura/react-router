@@ -1,7 +1,22 @@
 import React from 'react'
+import axios from 'axios';
+import { useState,useEffect } from 'react';
 import ProductFrame from '../../components/ProductFrame';
-const Products = (props) => {
-  const items = props.data;
+const endpoint="https://fakestoreapi.com/products";
+const Products = () => {
+   const [items,setItems]=useState([]);
+   
+
+     useEffect(()=>{
+    
+      axios.get(endpoint).then((resp)=>{
+         
+       
+          setItems(resp.data)
+        
+      })
+  
+  },[])
    
   return (
     <main>

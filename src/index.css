@@ -69,7 +69,7 @@ main{
 
 .special {
   position: absolute;
-  top: 30px;
+  top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -81,7 +81,9 @@ main{
 
 }
 
-
+.title{
+  height:80px;
+}
 
 .price , .rating{
   text-align: center;

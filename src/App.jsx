@@ -6,32 +6,18 @@ import LandingPage from './pages/LandingPage';
 import About from './pages/About';
 import Products from './pages/Products';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const endpoint="https://fakestoreapi.com/products";
 
 function App() {
   
-  const [items,setItems]=useState([]);
-  
-
-     useEffect(()=>{
-    
-      axios.get(endpoint).then((resp)=>{
-      
-        const array= resp.data.filter((item)=>{
-          return item
-        })
-        setItems(array);
-       
-      })
-  },[])
+ 
  return (
   
     <BrowserRouter>
       <Routes>
         <Route   element={<DefaultLayout/>}>
-          <Route path="/" element={<LandingPage data={items}/>}/>
+          <Route path="/" element={<LandingPage />}/>
           <Route path="/about" element={<About/>}/>
-          <Route path="/products" element={<Products data={items}/>}/>
+          <Route path="/products" element={<Products />}/>
         </Route>  
     </Routes>
 

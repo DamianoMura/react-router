@@ -1,14 +1,30 @@
 
 import { Link, NavLink } from 'react-router-dom'
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+
+const endpoint="https://fakestoreapi.com/products";
 
 
+const LandingPage = () => {
 
-const LandingPage = (props) => {
-const data = props.data;
- const items=data.filter((item)=>{
-          return item.rating.rate>3 && item.rating.count>350
-        })
-  return (
+ const [items,setItems]=useState([]);
+   
+
+     useEffect(()=>{
+    
+      axios.get(endpoint).then((resp)=>{
+          const filtered = resp.data.filter((item)=>{
+            return( item.rating.rate>3 && item.rating.count>350)
+          })
+       
+          setItems(filtered)
+        
+      })
+  
+  },[])
+
+ return (
     <main>
       <div className="container-fliud">
         <div className="row">
@@ -35,7 +51,7 @@ const data = props.data;
                             <img src={item.image} alt={`item${item.id}`} />
                             <div className="special">
                               <strong className="price mb-1">{item.price} €</strong>
-                              <strong className="rating">{item.rating.rate} <i class="fa-solid fa-star"></i></strong>
+                              <strong className="rating">{item.rating.rate} <i className="fa-solid fa-star"></i></strong>
                               
                             </div>
                             <div className="title">
