@@ -6,15 +6,15 @@ const endpoint="https://fakestoreapi.com/products";
 const ProductDetail = () => {
   const {id}=useParams();
   const [product, setProduct]=useState();
-  
+  const navigate=useNavigate();
   useEffect(()=>{
     axios.get(endpoint+`/${id}`).then((resp)=>{
     setProduct(resp.data);
-    console.log(resp.data)
   })
-  },[])
+  },[id])
   return (
-    
+  !product ? <div className="container h1">loading....</div>
+  :
   <div className="card">
     <div className="card-header d-flex justify-content between p-3">
       <div className={`cat cat-${product.category.substr(0,3)}`}> {product.category}</div>
@@ -37,10 +37,10 @@ const ProductDetail = () => {
     <div className="card-footer d-flex justify-content-between">
       <button 
         className="btn btn-secondary"
-        onClick={()=>{useNavigate(parseInt(id)-1)}}>previous</button>
+        onClick={()=>{parseInt(id)-1 === 0 ? navigate(`/products`) : navigate(`/products/${parseInt(id)-1}`)}}>previous</button>
       <button 
         className="btn btn-secondary"
-        onClick={()=>{useNavigate(parseInt(id)+1)}}
+        onClick={()=>{navigate(`/products/${parseInt(id)+1}`)}}
           >next</button>
     </div>
   </div>
