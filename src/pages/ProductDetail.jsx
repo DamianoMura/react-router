@@ -4,15 +4,14 @@ import { useNavigate,useParams } from 'react-router-dom';
 import ProductFrame from '../../components/ProductFrame'
 const endpoint="https://fakestoreapi.com/products";
 const ProductDetail = () => {
-  const {id} =useParams();
-  console.log(id)
-  const [product,setProduct]=useState({})
+  const {id}=useParams();
+  const [product, setProduct]=useState();
+  
   useEffect(()=>{
-    console.log(`we fetch data from the endpoint adding /${id} to its address`);
     axios.get(endpoint+`/${id}`).then((resp)=>{
-      setProduct(structuredClone(resp.data))
-      console.log(product)
-    })
+    setProduct(resp.data);
+    console.log(resp.data)
+  })
   },[])
   return (
     
@@ -34,6 +33,15 @@ const ProductDetail = () => {
       <div className="description">
       {product.description}
       </div>
+    </div>
+    <div className="card-footer d-flex justify-content-between">
+      <button 
+        className="btn btn-secondary"
+        onClick={()=>{useNavigate(parseInt(id)-1)}}>previous</button>
+      <button 
+        className="btn btn-secondary"
+        onClick={()=>{useNavigate(parseInt(id)+1)}}
+          >next</button>
     </div>
   </div>
   )

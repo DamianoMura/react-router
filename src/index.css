@@ -176,6 +176,10 @@ main{
   width:100%;
 }
 
+.image-frame{
+  position: relative;
+}
+
 /*product details*/
 .card-body .description{
   padding: 10px;

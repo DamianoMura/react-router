@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import About from './pages/About';
 import DefaultLayout from './layouts/DefaultLayout';
 import LandingPage from './pages/LandingPage';
-import About from './pages/About';
 import Products from './pages/Products';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductDetail from './pages/ProductDetail';
 
 function App() {
@@ -18,9 +18,11 @@ function App() {
         <Route   element={<DefaultLayout/>}>
           <Route path="/" element={<LandingPage />}/>
           <Route path="/about" element={<About/>}/>
-          <Route  path="/products" element={<Products/>}/>
+          <Route  path="/products" >
+            <Route index element={<Products/>}/>
+            <Route path=":id" element={<ProductDetail/>}/>
+          </Route>
             
-            <Route path="/products/:id" element={<ProductDetail/>}/>
           
          
         </Route>  
