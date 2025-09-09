@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { useState,useEffect } from 'react';
+import { Link, useParams} from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import ProductFrame from '../../components/ProductFrame';
 const endpoint="https://fakestoreapi.com/products";
 const Products = () => {
@@ -11,12 +11,8 @@ const Products = () => {
      useEffect(()=>{
     
       axios.get(endpoint).then((resp)=>{
-         
-       
-          setItems(resp.data)
-        
+         setItems(structuredClone(resp.data))
       })
-  
   },[])
    
   return (
@@ -30,8 +26,8 @@ const Products = () => {
           {
             items.map((item)=>{
               return(
-                <Link to={`/product_detail${item.id}`} >
-                <ProductFrame data={item} key={item.id}/>
+                <Link to={`/products/${item.id}`} key={item.id} >
+                <ProductFrame data={item} />
                   </Link>
               )
             })

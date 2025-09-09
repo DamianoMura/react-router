@@ -176,8 +176,12 @@ main{
   width:100%;
 }
 
-
-
+/*product details*/
+.card-body .description{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
 
 
 

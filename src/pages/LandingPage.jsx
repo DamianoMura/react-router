@@ -44,7 +44,7 @@ const LandingPage = () => {
                     return(
 
                       
-                      <div className="col-12 col-md-6 col-lg-3 p-2"  >
+                      <div className="col-12 col-md-6 col-lg-3 p-2" key={item.id} >
                         <div className="cta p-2">
 
                           <div className="cta-pic p-5 m-1">
